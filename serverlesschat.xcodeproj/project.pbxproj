@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C819EBFE1A9A058C00881F76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EBFD1A9A058C00881F76 /* main.m */; };
+		C819EC011A9A058C00881F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC001A9A058C00881F76 /* AppDelegate.m */; };
+		C819EC041A9A058C00881F76 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC031A9A058C00881F76 /* FirstViewController.m */; };
+		C819EC071A9A058C00881F76 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC061A9A058C00881F76 /* SecondViewController.m */; };
+		C819EC0A1A9A058C00881F76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C819EC081A9A058C00881F76 /* Main.storyboard */; };
+		C819EC0C1A9A058C00881F76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C819EC0B1A9A058C00881F76 /* Images.xcassets */; };
+		C819EC0F1A9A058C00881F76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C819EC0D1A9A058C00881F76 /* LaunchScreen.xib */; };
+		C819EC1B1A9A058C00881F76 /* serverlesschatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC1A1A9A058C00881F76 /* serverlesschatTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C819EC151A9A058C00881F76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C819EBF01A9A058C00881F76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C819EBF71A9A058C00881F76;
+			remoteInfo = serverlesschat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C819EBF81A9A058C00881F76 /* serverlesschat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = serverlesschat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C819EBFC1A9A058C00881F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C819EBFD1A9A058C00881F76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C819EBFF1A9A058C00881F76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C819EC001A9A058C00881F76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C819EC021A9A058C00881F76 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		C819EC031A9A058C00881F76 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		C819EC051A9A058C00881F76 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C819EC061A9A058C00881F76 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C819EC091A9A058C00881F76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C819EC0B1A9A058C00881F76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C819EC0E1A9A058C00881F76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C819EC141A9A058C00881F76 /* serverlesschatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = serverlesschatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C819EC191A9A058C00881F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C819EC1A1A9A058C00881F76 /* serverlesschatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = serverlesschatTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C819EBF51A9A058C00881F76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C819EC111A9A058C00881F76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C819EBEF1A9A058C00881F76 = {
+			isa = PBXGroup;
+			children = (
+				C819EBFA1A9A058C00881F76 /* serverlesschat */,
+				C819EC171A9A058C00881F76 /* serverlesschatTests */,
+				C819EBF91A9A058C00881F76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C819EBF91A9A058C00881F76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C819EBF81A9A058C00881F76 /* serverlesschat.app */,
+				C819EC141A9A058C00881F76 /* serverlesschatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C819EBFA1A9A058C00881F76 /* serverlesschat */ = {
+			isa = PBXGroup;
+			children = (
+				C819EBFF1A9A058C00881F76 /* AppDelegate.h */,
+				C819EC001A9A058C00881F76 /* AppDelegate.m */,
+				C819EC021A9A058C00881F76 /* FirstViewController.h */,
+				C819EC031A9A058C00881F76 /* FirstViewController.m */,
+				C819EC051A9A058C00881F76 /* SecondViewController.h */,
+				C819EC061A9A058C00881F76 /* SecondViewController.m */,
+				C819EC081A9A058C00881F76 /* Main.storyboard */,
+				C819EC0B1A9A058C00881F76 /* Images.xcassets */,
+				C819EC0D1A9A058C00881F76 /* LaunchScreen.xib */,
+				C819EBFB1A9A058C00881F76 /* Supporting Files */,
+			);
+			path = serverlesschat;
+			sourceTree = "<group>";
+		};
+		C819EBFB1A9A058C00881F76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C819EBFC1A9A058C00881F76 /* Info.plist */,
+				C819EBFD1A9A058C00881F76 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C819EC171A9A058C00881F76 /* serverlesschatTests */ = {
+			isa = PBXGroup;
+			children = (
+				C819EC1A1A9A058C00881F76 /* serverlesschatTests.m */,
+				C819EC181A9A058C00881F76 /* Supporting Files */,
+			);
+			path = serverlesschatTests;
+			sourceTree = "<group>";
+		};
+		C819EC181A9A058C00881F76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C819EC191A9A058C00881F76 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C819EBF71A9A058C00881F76 /* serverlesschat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C819EC1E1A9A058C00881F76 /* Build configuration list for PBXNativeTarget "serverlesschat" */;
+			buildPhases = (
+				C819EBF41A9A058C00881F76 /* Sources */,
+				C819EBF51A9A058C00881F76 /* Frameworks */,
+				C819EBF61A9A058C00881F76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = serverlesschat;
+			productName = serverlesschat;
+			productReference = C819EBF81A9A058C00881F76 /* serverlesschat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C819EC131A9A058C00881F76 /* serverlesschatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C819EC211A9A058C00881F76 /* Build configuration list for PBXNativeTarget "serverlesschatTests" */;
+			buildPhases = (
+				C819EC101A9A058C00881F76 /* Sources */,
+				C819EC111A9A058C00881F76 /* Frameworks */,
+				C819EC121A9A058C00881F76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C819EC161A9A058C00881F76 /* PBXTargetDependency */,
+			);
+			name = serverlesschatTests;
+			productName = serverlesschatTests;
+			productReference = C819EC141A9A058C00881F76 /* serverlesschatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C819EBF01A9A058C00881F76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Pierre Gilot";
+				TargetAttributes = {
+					C819EBF71A9A058C00881F76 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					C819EC131A9A058C00881F76 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = C819EBF71A9A058C00881F76;
+					};
+				};
+			};
+			buildConfigurationList = C819EBF31A9A058C00881F76 /* Build configuration list for PBXProject "serverlesschat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C819EBEF1A9A058C00881F76;
+			productRefGroup = C819EBF91A9A058C00881F76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C819EBF71A9A058C00881F76 /* serverlesschat */,
+				C819EC131A9A058C00881F76 /* serverlesschatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C819EBF61A9A058C00881F76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C819EC0A1A9A058C00881F76 /* Main.storyboard in Resources */,
+				C819EC0F1A9A058C00881F76 /* LaunchScreen.xib in Resources */,
+				C819EC0C1A9A058C00881F76 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C819EC121A9A058C00881F76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C819EBF41A9A058C00881F76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C819EC071A9A058C00881F76 /* SecondViewController.m in Sources */,
+				C819EC011A9A058C00881F76 /* AppDelegate.m in Sources */,
+				C819EC041A9A058C00881F76 /* FirstViewController.m in Sources */,
+				C819EBFE1A9A058C00881F76 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C819EC101A9A058C00881F76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C819EC1B1A9A058C00881F76 /* serverlesschatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C819EC161A9A058C00881F76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C819EBF71A9A058C00881F76 /* serverlesschat */;
+			targetProxy = C819EC151A9A058C00881F76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C819EC081A9A058C00881F76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C819EC091A9A058C00881F76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C819EC0D1A9A058C00881F76 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C819EC0E1A9A058C00881F76 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C819EC1C1A9A058C00881F76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C819EC1D1A9A058C00881F76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C819EC1F1A9A058C00881F76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = serverlesschat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C819EC201A9A058C00881F76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = serverlesschat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C819EC221A9A058C00881F76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = serverlesschatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/serverlesschat.app/serverlesschat";
+			};
+			name = Debug;
+		};
+		C819EC231A9A058C00881F76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = serverlesschatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/serverlesschat.app/serverlesschat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C819EBF31A9A058C00881F76 /* Build configuration list for PBXProject "serverlesschat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C819EC1C1A9A058C00881F76 /* Debug */,
+				C819EC1D1A9A058C00881F76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C819EC1E1A9A058C00881F76 /* Build configuration list for PBXNativeTarget "serverlesschat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C819EC1F1A9A058C00881F76 /* Debug */,
+				C819EC201A9A058C00881F76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C819EC211A9A058C00881F76 /* Build configuration list for PBXNativeTarget "serverlesschatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C819EC221A9A058C00881F76 /* Debug */,
+				C819EC231A9A058C00881F76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C819EBF01A9A058C00881F76 /* Project object */;
+}
