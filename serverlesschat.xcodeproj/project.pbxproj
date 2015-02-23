@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110E9D5C3B54D81A52A0FCD8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABC1A5FDE4061CE82481AC1 /* libPods.a */; };
 		C819EBFE1A9A058C00881F76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EBFD1A9A058C00881F76 /* main.m */; };
 		C819EC011A9A058C00881F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC001A9A058C00881F76 /* AppDelegate.m */; };
 		C819EC041A9A058C00881F76 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC031A9A058C00881F76 /* FirstViewController.m */; };
@@ -15,6 +16,8 @@
 		C819EC0C1A9A058C00881F76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C819EC0B1A9A058C00881F76 /* Images.xcassets */; };
 		C819EC0F1A9A058C00881F76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C819EC0D1A9A058C00881F76 /* LaunchScreen.xib */; };
 		C819EC1B1A9A058C00881F76 /* serverlesschatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC1A1A9A058C00881F76 /* serverlesschatTests.m */; };
+		C819EC251A9A379A00881F76 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C819EC241A9A379A00881F76 /* iAd.framework */; };
+		C819EC2B1A9A3A2B00881F76 /* PGTContactsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC2A1A9A3A2B00881F76 /* PGTContactsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F6AC74287DDB828CAE3B78C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3ABC1A5FDE4061CE82481AC1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BB86BFB02C149A80F23A4D7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C819EBF81A9A058C00881F76 /* serverlesschat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = serverlesschat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C819EBFC1A9A058C00881F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C819EBFD1A9A058C00881F76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +49,9 @@
 		C819EC141A9A058C00881F76 /* serverlesschatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = serverlesschatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C819EC191A9A058C00881F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C819EC1A1A9A058C00881F76 /* serverlesschatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = serverlesschatTests.m; sourceTree = "<group>"; };
+		C819EC241A9A379A00881F76 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		C819EC291A9A3A2B00881F76 /* PGTContactsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTContactsController.h; sourceTree = "<group>"; };
+		C819EC2A1A9A3A2B00881F76 /* PGTContactsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTContactsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C819EC251A9A379A00881F76 /* iAd.framework in Frameworks */,
+				110E9D5C3B54D81A52A0FCD8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +74,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC94134926638D07A80D95E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BB86BFB02C149A80F23A4D7 /* Pods.debug.xcconfig */,
+				1F6AC74287DDB828CAE3B78C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C819EBEF1A9A058C00881F76 = {
 			isa = PBXGroup;
 			children = (
 				C819EBFA1A9A058C00881F76 /* serverlesschat */,
 				C819EC171A9A058C00881F76 /* serverlesschatTests */,
 				C819EBF91A9A058C00881F76 /* Products */,
+				AC94134926638D07A80D95E5 /* Pods */,
+				EE883A8BFE50B282753BD397 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +116,8 @@
 				C819EC0B1A9A058C00881F76 /* Images.xcassets */,
 				C819EC0D1A9A058C00881F76 /* LaunchScreen.xib */,
 				C819EBFB1A9A058C00881F76 /* Supporting Files */,
+				C819EC291A9A3A2B00881F76 /* PGTContactsController.h */,
+				C819EC2A1A9A3A2B00881F76 /* PGTContactsController.m */,
 			);
 			path = serverlesschat;
 			sourceTree = "<group>";
@@ -124,6 +148,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EE883A8BFE50B282753BD397 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C819EC241A9A379A00881F76 /* iAd.framework */,
+				3ABC1A5FDE4061CE82481AC1 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C819EC1E1A9A058C00881F76 /* Build configuration list for PBXNativeTarget "serverlesschat" */;
 			buildPhases = (
+				D4FDF2584F8E7761BD4403BF /* Check Pods Manifest.lock */,
 				C819EBF41A9A058C00881F76 /* Sources */,
 				C819EBF51A9A058C00881F76 /* Frameworks */,
 				C819EBF61A9A058C00881F76 /* Resources */,
+				4432A2D8CBFEEA208D465A69 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,6 +208,7 @@
 				TargetAttributes = {
 					C819EBF71A9A058C00881F76 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = SJ4ALSNG8V;
 					};
 					C819EC131A9A058C00881F76 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -219,12 +255,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4432A2D8CBFEEA208D465A69 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4FDF2584F8E7761BD4403BF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C819EBF41A9A058C00881F76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C819EC071A9A058C00881F76 /* SecondViewController.m in Sources */,
+				C819EC2B1A9A3A2B00881F76 /* PGTContactsController.m in Sources */,
 				C819EC011A9A058C00881F76 /* AppDelegate.m in Sources */,
 				C819EC041A9A058C00881F76 /* FirstViewController.m in Sources */,
 				C819EBFE1A9A058C00881F76 /* main.m in Sources */,
@@ -347,9 +417,11 @@
 		};
 		C819EC1F1A9A058C00881F76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BB86BFB02C149A80F23A4D7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = serverlesschat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,9 +429,11 @@
 		};
 		C819EC201A9A058C00881F76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F6AC74287DDB828CAE3B78C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = serverlesschat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +492,7 @@
 				C819EC201A9A058C00881F76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C819EC211A9A058C00881F76 /* Build configuration list for PBXNativeTarget "serverlesschatTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +501,7 @@
 				C819EC231A9A058C00881F76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
