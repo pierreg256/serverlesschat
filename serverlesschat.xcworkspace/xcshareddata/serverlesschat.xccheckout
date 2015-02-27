@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F641BFBB-3958-45EE-AE9D-12669B5E3903</string>
+	<key>IDESourceControlProjectName</key>
+	<string>serverlesschat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C58F02FCBE4DAB03C7B455A828787BDDB5027368</key>
+		<string>https://github.com/pierreg256/serverlesschat.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>serverlesschat.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C58F02FCBE4DAB03C7B455A828787BDDB5027368</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pierreg256/serverlesschat.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C58F02FCBE4DAB03C7B455A828787BDDB5027368</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C58F02FCBE4DAB03C7B455A828787BDDB5027368</string>
+			<key>IDESourceControlWCCName</key>
+			<string>serverlesschat</string>
+		</dict>
+	</array>
+</dict>
+</plist>

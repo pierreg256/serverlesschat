@@ -8,6 +8,8 @@
 
 #import "PGTContactsController.h"
 #import "FaceBookSDK.h"
+#import "PGTContact.h"
+#import <iAd/iAd.h>
 
 @interface PGTContactsController ()
 @property NSMutableArray* contacts;
@@ -26,16 +28,23 @@
 -(void) refresh
 {
     self.contacts = [[NSMutableArray alloc] initWithCapacity:20];
+    [self.contacts addObject:[PGTContact me]];
     FBRequest* friendsRequest = [FBRequest requestForMyFriends];
     [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
                                                   NSDictionary* result,
                                                   NSError *error) {
         NSArray* friends = [result objectForKey:@"data"];
-        NSLog(@"Found: %i friends", friends.count);
+        NSLog(@"Found: %lu friends", (unsigned long)friends.count);
         for (NSDictionary<FBGraphUser>* friend in friends) {
             NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
             NSLog(@"%@",friend);
-            [self.contacts addObject:friend];
+            PGTContact* contact = [[PGTContact alloc] init];
+            contact.firstName = friend.first_name;
+            contact.lastName = friend.last_name;
+            contact.fullName = friend.name;
+            contact.idProvider = kidProviderFacebook;
+            contact.idProviderID = friend.objectID;
+            [self.contacts addObject:contact];
         }
         [self.tableView reloadData];
     }];
@@ -43,6 +52,8 @@
 
 -(void)viewDidLoad
 {
+    self.canDisplayBannerAds = YES;
+
     [self refresh];
 
 }
@@ -62,8 +73,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell" forIndexPath:indexPath];
-    NSDictionary<FBGraphUser>* friend = [_contacts objectAtIndex:indexPath.row];
-    cell.textLabel.text = friend.name;
+    //NSDictionary<FBGraphUser>* friend = [_contacts objectAtIndex:indexPath.row];
+    PGTContact* contact = [_contacts objectAtIndex:indexPath.row];
+    cell.textLabel.text = contact.fullName;
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"false", @"redirect",
                             @"50", @"height",
@@ -72,7 +84,7 @@
                             nil
                             ];
 
-    [FBRequestConnection startWithGraphPath:[NSString stringWithFormat:@"/%@/picture", friend.objectID]
+    [FBRequestConnection startWithGraphPath:[NSString stringWithFormat:@"/%@/picture", contact.idProviderID]
                                  parameters:params
                                  HTTPMethod:@"GET"
                           completionHandler:^(

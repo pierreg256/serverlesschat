@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		110E9D5C3B54D81A52A0FCD8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABC1A5FDE4061CE82481AC1 /* libPods.a */; };
+		ACC8EDB41A9F4C67006CC019 /* PGTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8EDB31A9F4C67006CC019 /* PGTContact.m */; };
+		ACC8EDBD1A9F5918006CC019 /* NSData+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8EDBC1A9F5918006CC019 /* NSData+Conversion.m */; };
+		ACC8EDC01A9F5F23006CC019 /* SLChatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8EDBF1A9F5F23006CC019 /* SLChatHelper.m */; };
+		ACC8EDC31A9F8866006CC019 /* PGTMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8EDC21A9F8866006CC019 /* PGTMessage.m */; };
 		C819EBFE1A9A058C00881F76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EBFD1A9A058C00881F76 /* main.m */; };
 		C819EC011A9A058C00881F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC001A9A058C00881F76 /* AppDelegate.m */; };
 		C819EC041A9A058C00881F76 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C819EC031A9A058C00881F76 /* FirstViewController.m */; };
@@ -34,6 +38,14 @@
 		1F6AC74287DDB828CAE3B78C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3ABC1A5FDE4061CE82481AC1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB86BFB02C149A80F23A4D7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC8EDB21A9F4C67006CC019 /* PGTContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTContact.h; sourceTree = "<group>"; };
+		ACC8EDB31A9F4C67006CC019 /* PGTContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTContact.m; sourceTree = "<group>"; };
+		ACC8EDBB1A9F5918006CC019 /* NSData+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Conversion.h"; sourceTree = "<group>"; };
+		ACC8EDBC1A9F5918006CC019 /* NSData+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Conversion.m"; sourceTree = "<group>"; };
+		ACC8EDBE1A9F5F23006CC019 /* SLChatHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChatHelper.h; sourceTree = "<group>"; };
+		ACC8EDBF1A9F5F23006CC019 /* SLChatHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLChatHelper.m; sourceTree = "<group>"; };
+		ACC8EDC11A9F8866006CC019 /* PGTMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTMessage.h; sourceTree = "<group>"; };
+		ACC8EDC21A9F8866006CC019 /* PGTMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTMessage.m; sourceTree = "<group>"; };
 		C819EBF81A9A058C00881F76 /* serverlesschat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = serverlesschat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C819EBFC1A9A058C00881F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C819EBFD1A9A058C00881F76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +130,14 @@
 				C819EBFB1A9A058C00881F76 /* Supporting Files */,
 				C819EC291A9A3A2B00881F76 /* PGTContactsController.h */,
 				C819EC2A1A9A3A2B00881F76 /* PGTContactsController.m */,
+				ACC8EDB21A9F4C67006CC019 /* PGTContact.h */,
+				ACC8EDB31A9F4C67006CC019 /* PGTContact.m */,
+				ACC8EDBB1A9F5918006CC019 /* NSData+Conversion.h */,
+				ACC8EDBC1A9F5918006CC019 /* NSData+Conversion.m */,
+				ACC8EDBE1A9F5F23006CC019 /* SLChatHelper.h */,
+				ACC8EDBF1A9F5F23006CC019 /* SLChatHelper.m */,
+				ACC8EDC11A9F8866006CC019 /* PGTMessage.h */,
+				ACC8EDC21A9F8866006CC019 /* PGTMessage.m */,
 			);
 			path = serverlesschat;
 			sourceTree = "<group>";
@@ -293,11 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC8EDC01A9F5F23006CC019 /* SLChatHelper.m in Sources */,
 				C819EC071A9A058C00881F76 /* SecondViewController.m in Sources */,
 				C819EC2B1A9A3A2B00881F76 /* PGTContactsController.m in Sources */,
+				ACC8EDB41A9F4C67006CC019 /* PGTContact.m in Sources */,
+				ACC8EDBD1A9F5918006CC019 /* NSData+Conversion.m in Sources */,
 				C819EC011A9A058C00881F76 /* AppDelegate.m in Sources */,
 				C819EC041A9A058C00881F76 /* FirstViewController.m in Sources */,
 				C819EBFE1A9A058C00881F76 /* main.m in Sources */,
+				ACC8EDC31A9F8866006CC019 /* PGTMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +380,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -397,6 +422,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -420,6 +446,9 @@
 			baseConfigurationReference = 7BB86BFB02C149A80F23A4D7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = serverlesschat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -432,6 +461,9 @@
 			baseConfigurationReference = 1F6AC74287DDB828CAE3B78C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = serverlesschat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

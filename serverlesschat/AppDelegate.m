@@ -8,9 +8,12 @@
 
 #import "AppDelegate.h"
 #import "FaceBookSDK.h"
+#import "PGTContact.h"
+#import "NSData+Conversion.h"
+#import "SLChatHelper.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) NSString* APSToken;
 @end
 
 @implementation AppDelegate
@@ -18,6 +21,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.APSToken = @"";
+    
+    UIUserNotificationType types = UIUserNotificationTypeBadge |
+    UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    
+    UIUserNotificationSettings *mySettings =
+    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    [application registerForRemoteNotifications];
+    
+    // Initialize cognito
+    _credentialsProvider = [AWSCognitoCredentialsProvider
+                                                          credentialsWithRegionType:AWSRegionEUWest1
+                                                          identityPoolId:@"eu-west-1:97a79b90-efa8-4bc8-9790-4dbc1c7fd85a"];
+    AWSServiceConfiguration *configuration = [AWSServiceConfiguration configurationWithRegion:AWSRegionEUWest1
+                                                                          credentialsProvider:self.credentialsProvider];
+    
+    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
     
     // Whenever a person opens app, check for a cached session
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
@@ -33,6 +55,17 @@
                                       }];
     }
     return YES;
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"%s - %@", __PRETTY_FUNCTION__, [deviceToken hexadecimalString]);
+    self.APSToken = [deviceToken hexadecimalString];
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"%s - %@", __PRETTY_FUNCTION__, error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -138,11 +171,26 @@
 -(void)userLoggedIn
 {
     NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSString *token = FBSession.activeSession.accessTokenData.accessToken;
+    self.credentialsProvider.logins = @{ @(AWSCognitoLoginProviderKeyFacebook): token };
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        [[self.credentialsProvider getIdentityId] continueWithBlock:^id(BFTask *task) {
+            if (task.error) {
+                NSLog(@"%s - %@",__PRETTY_FUNCTION__, task.error);
+            } else {
+                [PGTContact updateMeWithFacebookUser:result apsToken:self.APSToken andCognitoID:task.result];
+                [SLChatHelper updateProfile];
+            }
+            return nil;
+        }];
+    }];
 }
 
 -(void)userLoggedOut
 {
     NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    self.credentialsProvider.logins = @{  };
 }
 
 -(void)showMessage:(NSString*)alertText withTitle:(NSString*)alertTitle

@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:
                               @[@"public_profile", @"email", @"user_friends"]];
+    loginView.loginBehavior = FBSessionLoginBehaviorForcingWebView;
     loginView.delegate = self;
     
     loginView.center = self.view.center;
@@ -37,12 +38,14 @@
     self.profilePictureView.center = center;
     [self.view addSubview:self.profilePictureView];
     
-    CGRect labelRect = CGRectMake(0, 0, screenWidth/2, screenWidth/8);
+    CGRect labelRect = CGRectMake(0, 0, screenWidth/2, screenWidth/4);
     center = loginView.center;
     center.y += (center.y/2);
     self.statusLabel = [[UILabel alloc] initWithFrame:labelRect];
     self.statusLabel.center = center;
     self.statusLabel.textAlignment = NSTextAlignmentCenter;
+    self.statusLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.statusLabel.numberOfLines = 0;
     [self.view addSubview:self.statusLabel];
 }
 
@@ -57,6 +60,7 @@
                             user:(id<FBGraphUser>)user {
     self.profilePictureView.profileID = user.objectID;
 //    self.nameLabel.text = user.name;
+    self.statusLabel.text = [NSString stringWithFormat:@"You're logged in as %@!", user.name];
 }
 
 // Logged-in user experience
