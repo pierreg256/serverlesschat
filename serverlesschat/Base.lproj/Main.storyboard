@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--View Controller-->
+        <!--Conversation Controller-->
         <scene sceneID="rUW-dp-iA2">
             <objects>
-                <viewController id="ygc-a8-amu" sceneMemberID="viewController">
+                <viewController id="ygc-a8-amu" customClass="PGTConversationController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xhM-o0-hpF"/>
                         <viewControllerLayoutGuide type="bottom" id="ZDL-3e-0VX"/>
@@ -76,16 +76,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mgr-tW-KQn">
-                                <rect key="frame" x="16" y="28" width="522" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqA-iP-pgF">
+                                <rect key="frame" x="16" y="28" width="35" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="ygc-a8-amu" eventType="touchUpInside" id="6Rp-Vq-9m3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your message here..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Mgr-tW-KQn">
+                                <rect key="frame" x="59" y="28" width="479" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="twitter" returnKeyType="send"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ8-cc-7gY">
                                 <rect key="frame" x="548" y="28" width="36" height="30"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonClicked:" destination="ygc-a8-amu" eventType="touchUpInside" id="zPq-UE-iVh"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jhj-8f-XpL">
                                 <rect key="frame" x="16" y="66" width="568" height="534"/>
@@ -94,13 +104,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rqA-iP-pgF" firstAttribute="top" secondItem="xhM-o0-hpF" secondAttribute="bottom" constant="8" id="5cP-F2-pMp"/>
+                            <constraint firstItem="rqA-iP-pgF" firstAttribute="leading" secondItem="rVN-Oa-ZIa" secondAttribute="leadingMargin" id="GnL-vF-MiW"/>
                             <constraint firstItem="qZ8-cc-7gY" firstAttribute="top" secondItem="rVN-Oa-ZIa" secondAttribute="topMargin" id="N5O-PC-fK0"/>
                             <constraint firstItem="Mgr-tW-KQn" firstAttribute="top" secondItem="xhM-o0-hpF" secondAttribute="bottom" constant="8" id="SJ9-R5-fQX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qZ8-cc-7gY" secondAttribute="trailing" id="YM3-CF-ZHC"/>
                             <constraint firstItem="ZDL-3e-0VX" firstAttribute="top" secondItem="Jhj-8f-XpL" secondAttribute="bottom" id="bRM-QX-Wsm"/>
+                            <constraint firstItem="Mgr-tW-KQn" firstAttribute="leading" secondItem="rqA-iP-pgF" secondAttribute="trailing" constant="8" id="gt6-UC-NLn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jhj-8f-XpL" secondAttribute="trailing" id="hWK-6g-96L"/>
                             <constraint firstItem="Jhj-8f-XpL" firstAttribute="top" secondItem="Mgr-tW-KQn" secondAttribute="bottom" constant="8" id="lxK-gr-qs5"/>
-                            <constraint firstItem="Mgr-tW-KQn" firstAttribute="leading" secondItem="rVN-Oa-ZIa" secondAttribute="leadingMargin" id="pGa-zN-PZg"/>
                             <constraint firstItem="Jhj-8f-XpL" firstAttribute="leading" secondItem="rVN-Oa-ZIa" secondAttribute="leadingMargin" id="sTG-8f-MwE"/>
                             <constraint firstItem="qZ8-cc-7gY" firstAttribute="leading" secondItem="Mgr-tW-KQn" secondAttribute="trailing" constant="10" id="x1P-gR-hwZ"/>
                             <constraint firstItem="qZ8-cc-7gY" firstAttribute="top" secondItem="xhM-o0-hpF" secondAttribute="bottom" constant="8" id="ztt-gj-7ot"/>
@@ -111,6 +123,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="btnBack" destination="rqA-iP-pgF" id="3q3-5k-MkJ"/>
+                        <outlet property="btnSend" destination="qZ8-cc-7gY" id="TCa-8R-eyp"/>
+                        <outlet property="inputText" destination="Mgr-tW-KQn" id="GIo-mc-G8j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpi-it-xRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,6 +11,7 @@
 #import "PGTContact.h"
 #import "NSData+Conversion.h"
 #import "SLChatHelper.h"
+#import "SNS.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) NSString* APSToken;
@@ -23,14 +24,38 @@
     // Override point for customization after application launch.
     self.APSToken = @"";
     
-    UIUserNotificationType types = UIUserNotificationTypeBadge |
-    UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    // Sets up Mobile Push Notification
+    UIMutableUserNotificationAction *readAction = [UIMutableUserNotificationAction new];
+    readAction.identifier = @"READ_IDENTIFIER";
+    readAction.title = @"Read";
+    readAction.activationMode = UIUserNotificationActivationModeForeground;
+    readAction.destructive = NO;
+    readAction.authenticationRequired = YES;
     
-    UIUserNotificationSettings *mySettings =
-    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    UIMutableUserNotificationAction *deleteAction = [UIMutableUserNotificationAction new];
+    deleteAction.identifier = @"DELETE_IDENTIFIER";
+    deleteAction.title = @"Delete";
+    deleteAction.activationMode = UIUserNotificationActivationModeForeground;
+    deleteAction.destructive = YES;
+    deleteAction.authenticationRequired = YES;
     
-    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-    [application registerForRemoteNotifications];
+    UIMutableUserNotificationAction *ignoreAction = [UIMutableUserNotificationAction new];
+    ignoreAction.identifier = @"IGNORE_IDENTIFIER";
+    ignoreAction.title = @"Ignore";
+    ignoreAction.activationMode = UIUserNotificationActivationModeForeground;
+    ignoreAction.destructive = NO;
+    ignoreAction.authenticationRequired = NO;
+    
+    UIMutableUserNotificationCategory *messageCategory = [UIMutableUserNotificationCategory new];
+    messageCategory.identifier = @"MESSAGE_CATEGORY";
+    [messageCategory setActions:@[readAction, deleteAction] forContext:UIUserNotificationActionContextMinimal];
+    [messageCategory setActions:@[readAction, deleteAction, ignoreAction] forContext:UIUserNotificationActionContextDefault];
+    
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:[NSSet setWithArray:@[messageCategory]]];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     // Initialize cognito
     _credentialsProvider = [AWSCognitoCredentialsProvider
@@ -61,12 +86,75 @@
 {
     NSLog(@"%s - %@", __PRETTY_FUNCTION__, [deviceToken hexadecimalString]);
     self.APSToken = [deviceToken hexadecimalString];
+    
+    NSString *deviceTokenString = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSLog(@"deviceTokenString: %@", deviceTokenString);
+    [[NSUserDefaults standardUserDefaults] setObject:deviceTokenString forKey:@"deviceToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    //[self.window.rootViewController.childViewControllers.firstObject performSelectorOnMainThread:@selector(displayDeviceInfo) withObject:nil waitUntilDone:nil];
+    
+    AWSSNS *sns = [AWSSNS defaultSNS];
+    AWSSNSCreatePlatformEndpointInput *request = [AWSSNSCreatePlatformEndpointInput new];
+    request.token = deviceTokenString;
+    request.platformApplicationArn = @"arn:aws:sns:eu-west-1:530131689009:app/APNS_SANDBOX/serverlesschat_dev";
+    [[sns createPlatformEndpoint:request] continueWithBlock:^id(BFTask *task) {
+        if (task.error != nil) {
+            NSLog(@"Error: %@",task.error);
+        } else {
+            AWSSNSCreateEndpointResponse *createEndPointResponse = task.result;
+            NSLog(@"endpointArn: %@",createEndPointResponse);
+            [[NSUserDefaults standardUserDefaults] setObject:createEndPointResponse.endpointArn forKey:@"endpointArn"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            //[self.window.rootViewController.childViewControllers.firstObject performSelectorOnMainThread:@selector(displayDeviceInfo) withObject:nil waitUntilDone:NO];
+            [SLChatHelper updateDeviceMapping];
+            
+        }
+        
+        return nil;
+    }];
+
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
     NSLog(@"%s - %@", __PRETTY_FUNCTION__, error);
 }
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler
+{
+    NSLog(@"%s -", __PRETTY_FUNCTION__);
+    if ([identifier  isEqual: @"READ_IDENTIFIER"]) {
+        NSLog(@"%s - User selected READ", __PRETTY_FUNCTION__);
+    }
+
+    if ([identifier  isEqual: @"DELETE_IDENTIFIER"]) {
+        NSLog(@"%s - User selected DELETE", __PRETTY_FUNCTION__);
+    }
+    
+    completionHandler();
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
+{
+    NSLog(@"%s -", __PRETTY_FUNCTION__);
+    if ([identifier  isEqual: @"READ_IDENTIFIER"]) {
+        NSLog(@"%s - User selected READ", __PRETTY_FUNCTION__);
+    }
+    
+    if ([identifier  isEqual: @"DELETE_IDENTIFIER"]) {
+        NSLog(@"%s - User selected DELETE", __PRETTY_FUNCTION__);
+    }
+    
+    completionHandler();
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    NSLog(@"%s -",__PRETTY_FUNCTION__);
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -180,6 +268,9 @@
             } else {
                 [PGTContact updateMeWithFacebookUser:result apsToken:self.APSToken andCognitoID:task.result];
                 [SLChatHelper updateProfile];
+                [SLChatHelper fetchMessagesWithCompletionHandler:^(NSArray *result) {
+                    NSLog(@"%s - %@",__PRETTY_FUNCTION__, result);
+                }];
             }
             return nil;
         }];

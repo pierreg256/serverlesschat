@@ -9,9 +9,17 @@
 #import "PGTContact.h"
 #import "FaceBookSDK.h"
 
-//@interface PGTContact ()
-//@property (nonatomic, strong) NSDictionary* attributes;
-//@end
+@implementation PGTDeviceMapping
+
++ (NSString *)dynamoDBTableName {
+    return @"serverless_device_mappings";
+}
+
++ (NSString *)hashKeyAttribute {
+    return @"localID";
+}
+
+@end
 
 @implementation PGTMapping
 + (NSString *)dynamoDBTableName {

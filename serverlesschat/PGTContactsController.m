@@ -101,4 +101,17 @@
     return cell;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%s - %@",__PRETTY_FUNCTION__,segue.identifier);
+    ((PGTConversationController*)segue.destinationViewController).delegate = self;
+    ((PGTConversationController*)segue.destinationViewController).recipient = [_contacts objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+}
+
+#pragma mark -- delegate methods
+-(void)dismissConversationController:(PGTConversationController *)conversationController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

@@ -11,10 +11,15 @@
 
 @interface PGTMessage : AWSDynamoDBObjectModel
 
+@property (nonatomic, strong) NSString* id;
 @property (nonatomic, strong) NSString* from;
 @property (nonatomic, strong) NSArray* to;
 @property (nonatomic, strong) NSString* body;
 @property (nonatomic, strong) NSNumber* timestamp;
+
+-(void)addRecipient:(NSString*)recipient;
+
+-(NSDictionary*)toNSDictionary;
 
 @end
 
@@ -22,4 +27,5 @@
 @end
 
 @interface PGTMessageIn : PGTMessage <AWSDynamoDBModeling>
+@property (nonatomic, strong) NSNumber* read;
 @end

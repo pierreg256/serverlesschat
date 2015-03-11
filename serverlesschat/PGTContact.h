@@ -20,6 +20,11 @@
 #define kKeyLocalID       @"localID"
 #define kKeyAPSToken      @"SNSToken"
 
+@interface PGTDeviceMapping : AWSDynamoDBObjectModel <AWSDynamoDBModeling>
+@property (nonatomic, strong) NSString* localID;
+@property (nonatomic, strong) NSString* endpointArn;
+@end
+
 @interface PGTMapping : AWSDynamoDBObjectModel <AWSDynamoDBModeling>
 @property (strong, nonatomic) NSString* idProviderID;
 @property (strong, nonatomic) NSString* localID;

@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "PGTMessage.h"
 @interface SLChatHelper : NSObject
 
 +(void)updateProfile;
++(void)updateDeviceMapping;
 
++(void)sendMessage:(PGTMessageOut*)message;
+
++(void)fetchMessagesWithCompletionHandler:(void (^)(NSArray* result))completionHandler;
 @end

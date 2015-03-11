@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PGTConversationController.h"
 
-@interface PGTContactsController : UITableViewController
+@interface PGTContactsController : UITableViewController <PGTConversationControllerDelegate>
 
 @end
