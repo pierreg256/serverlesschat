@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		110E9D5C3B54D81A52A0FCD8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABC1A5FDE4061CE82481AC1 /* libPods.a */; };
+		AC1C122D1AB079C100454547 /* PGTConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1C122C1AB079C100454547 /* PGTConversationsViewController.m */; };
 		AC927E641AADD9C500246171 /* PGTConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC927E631AADD9C500246171 /* PGTConversation.m */; };
 		ACC8EDB41A9F4C67006CC019 /* PGTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8EDB31A9F4C67006CC019 /* PGTContact.m */; };
 		ACC8EDBD1A9F5918006CC019 /* NSData+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8EDBC1A9F5918006CC019 /* NSData+Conversion.m */; };
@@ -40,6 +41,8 @@
 		1F6AC74287DDB828CAE3B78C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3ABC1A5FDE4061CE82481AC1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB86BFB02C149A80F23A4D7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AC1C122B1AB079C100454547 /* PGTConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTConversationsViewController.h; sourceTree = "<group>"; };
+		AC1C122C1AB079C100454547 /* PGTConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTConversationsViewController.m; sourceTree = "<group>"; };
 		AC927E621AADD9C500246171 /* PGTConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTConversation.h; sourceTree = "<group>"; };
 		AC927E631AADD9C500246171 /* PGTConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTConversation.m; sourceTree = "<group>"; };
 		ACC8EDB21A9F4C67006CC019 /* PGTContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTContact.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				ACC8EDC51AA09B0F006CC019 /* PGTConversationController.m */,
 				AC927E621AADD9C500246171 /* PGTConversation.h */,
 				AC927E631AADD9C500246171 /* PGTConversation.m */,
+				AC1C122B1AB079C100454547 /* PGTConversationsViewController.h */,
+				AC1C122C1AB079C100454547 /* PGTConversationsViewController.m */,
 			);
 			path = serverlesschat;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				C819EC011A9A058C00881F76 /* AppDelegate.m in Sources */,
 				C819EC041A9A058C00881F76 /* FirstViewController.m in Sources */,
 				C819EBFE1A9A058C00881F76 /* main.m in Sources */,
+				AC1C122D1AB079C100454547 /* PGTConversationsViewController.m in Sources */,
 				ACC8EDC31A9F8866006CC019 /* PGTMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

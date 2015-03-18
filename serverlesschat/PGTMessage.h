@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSArray* to;
 @property (nonatomic, strong) NSString* body;
 @property (nonatomic, strong) NSNumber* timestamp;
+@property (nonatomic, strong) NSString* conversationID;
 
 -(void)addRecipient:(NSString*)recipient;
 

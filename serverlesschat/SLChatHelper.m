@@ -11,6 +11,7 @@
 #import "DynamoDB.h"
 #import "S3.h"
 #import "AWSCore.h"
+#import "PGTConversation.h"
 
 @implementation SLChatHelper
 static AWSDynamoDBObjectMapper *dynamoDBObjectMapper ;
@@ -149,7 +150,9 @@ static AWSDynamoDBObjectMapper *dynamoDBObjectMapper ;
                         
                         PGTMessageIn* msg = [[PGTMessageIn alloc] initWithDictionary:msgDict error:&error];
                         msg.read = [NSNumber numberWithBool:NO];
-                        NSLog(@"%s - %@", __PRETTY_FUNCTION__, msg);
+                        // We have a message, let's try and add it to an existing conversation
+                        [PGTConversation handleNewMessage:msg];
+                        //NSLog(@"%s - %@", __PRETTY_FUNCTION__, msg);
                     }
                     
                     return nil;

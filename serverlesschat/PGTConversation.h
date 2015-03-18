@@ -8,12 +8,31 @@
 
 #import <Foundation/Foundation.h>
 #import "PGTMessage.h"
+#import "MTLModel+NSCoding.h"
 
-@interface PGTConversation : NSObject
+
+@interface PGTConversationMetadata : MTLModel
 
 @property (nonatomic, strong) NSString* conversationID;
-@property (nonatomic, readonly) NSUInteger count;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic, readonly) NSUInteger msgCount;
+@property (nonatomic, strong) NSMutableArray* recipients;
 
+@end
+
+@interface PGTConversationEntry : NSObject
+
+@property (nonatomic, strong) NSURL* fileURL;
+@property (nonatomic, strong) PGTConversationMetadata* metadata;
+
+@end
+
+@interface PGTConversation : UIDocument
+
+@property (nonatomic, strong) PGTConversationMetadata* metadata;
+
+
++(void)handleNewMessage:(PGTMessageIn*)message;
 -(void)addMessage:(PGTMessage*)message;
 
 @end

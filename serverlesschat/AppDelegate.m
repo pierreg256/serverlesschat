@@ -152,6 +152,9 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
     NSLog(@"%s -",__PRETTY_FUNCTION__);
+    [SLChatHelper fetchMessagesWithCompletionHandler:^(NSArray *result) {
+        
+    }];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
